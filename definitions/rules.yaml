@@ -1,0 +1,9 @@
+YAML
+version: 2.1.0
+rules:
+  - ensure_unique_id:
+      description: "Ensure id is unique"
+      sql: SELECT COUNT(DISTINCT id) = COUNT(*) FROM Students;
+  - ensure_id_positive:
+      description: "Ensure id is greater than 0"
+      sql: SELECT COUNT(*) = 0 FROM Students WHERE id <= 0;
